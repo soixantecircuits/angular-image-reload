@@ -41,3 +41,6 @@ bower_components
 ehthumbs.db
 Icon?
 Thumbs.db
+
+node_modules/
+bower_components/
