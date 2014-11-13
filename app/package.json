@@ -13,8 +13,8 @@
     "position": "center",
     "max_width": 1920,
     "max_height": 1080,
-    "toolbar": false,
-    "frame": false
+    "toolbar": true,
+    "frame": true
   },
   "webkit": {
     "plugin": true
