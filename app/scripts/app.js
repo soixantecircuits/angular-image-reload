@@ -1,33 +1,8 @@
 'use strict';
+var locations = ['index.html', 'index2.html'];
+function countUp() {
+        window.location = locations[Math.floor(Math.random() * locations.length)];
+        setTimeout(countUp, 1500);
+    }
 
-/**
- * @ngdoc overview
- * @name angularImageApp
- * @description
- * # angularImageApp
- *
- * Main module of the application.
- */
-angular
-  .module('angularImageApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    setTimeout(countUp, 1500);
