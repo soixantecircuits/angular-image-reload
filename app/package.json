@@ -1,0 +1,23 @@
+{
+  "main": "index.html",
+  "name": "angular-image-reload",
+  "description": "",
+  "version": "0.1.0",
+  "keywords": [
+    "node-webkit"
+  ],
+  "window": {
+    "title": "angular-image-reload",
+    "width": 1920,
+    "height": 1080,
+    "position": "center",
+    "max_width": 1920,
+    "max_height": 1080,
+    "toolbar": false,
+    "frame": false
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "chromium-args": "--enable-webgl --ignore-gpu-blacklist"
+}

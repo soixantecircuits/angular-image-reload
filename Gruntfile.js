@@ -293,7 +293,14 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
-
+    nodewebkit: {
+      options: {
+        platforms: ['linux64'], // Don't forget to change this for your platform
+        buildDir: 'webkitbuilds', // Where the build version of my node-webkit app is saved
+        version: '0.11.0-rc1'
+      },
+      src: ['dist/**/*'] // Your node-webkit app
+    },
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -306,6 +313,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
+            'package.json',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'fonts/{,*/}*.*'
@@ -349,6 +357,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-node-webkit-builder');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -369,6 +378,8 @@ module.exports = function (grunt) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
   });
+
+  // grunt.registerTask('nw', ['copy', 'nodewebkit', 'run-nodewebkit']);
 
   grunt.registerTask('test', [
     'clean:server',
